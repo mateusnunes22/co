@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+	<managed-bean>
+		<managed-bean-name>clienteBean</managed-bean-name>
+		<managed-bean-class>controle.ClienteBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>graficoBean</managed-bean-name>
+		<managed-bean-class>controle.GraficoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>materiaBean</managed-bean-name>
+		<managed-bean-class>controle.MateriaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>usuarioBean</managed-bean-name>
+		<managed-bean-class>controle.UsuarioBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>contromidia</display-name>
+		<from-view-id>/contromidia.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>logadoClie</from-outcome>
+			<to-view-id>/cliente.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>contromidia</display-name>
+		<from-view-id>/contromidia.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>logadoBoss</from-outcome>
+			<to-view-id>/boss.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>contromidia</display-name>
+		<from-view-id>/contromidia.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>logadoFunc</from-outcome>
+			<to-view-id>/arquivo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>funcionarioaudio</display-name>
+		<from-view-id>/funcionarioaudio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>retorno</from-outcome>
+			<to-view-id>/arquivo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>funcionariovideo</display-name>
+		<from-view-id>/funcionariovideo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>retorno</from-outcome>
+			<to-view-id>/arquivo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>funcionarioimpresso</display-name>
+		<from-view-id>/funcionarioimpresso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>retorno</from-outcome>
+			<to-view-id>/arquivo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>boss</display-name>
+		<from-view-id>/boss.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editAud</from-outcome>
+			<to-view-id>/editeaudio.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeaudio</display-name>
+		<from-view-id>/editeaudio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>retorno</from-outcome>
+			<to-view-id>/boss.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>boss</display-name>
+		<from-view-id>/boss.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editVid</from-outcome>
+			<to-view-id>/editevideo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editevideo</display-name>
+		<from-view-id>/editevideo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>retorno</from-outcome>
+			<to-view-id>/boss.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>boss</display-name>
+		<from-view-id>/boss.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editImp</from-outcome>
+			<to-view-id>/editeimpresso.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeimpresso</display-name>
+		<from-view-id>/editeimpresso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>retorno</from-outcome>
+			<to-view-id>/boss.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeveiculo</display-name>
+		<from-view-id>/editeveiculo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editAud</from-outcome>
+			<to-view-id>/editeaudio.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeaudio</display-name>
+		<from-view-id>/editeaudio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editAud</from-outcome>
+			<to-view-id>/editeveiculo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeveiculo</display-name>
+		<from-view-id>/editeveiculo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editVid</from-outcome>
+			<to-view-id>/editevideo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editevideo</display-name>
+		<from-view-id>/editevideo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editVid</from-outcome>
+			<to-view-id>/editeveiculo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeveiculo</display-name>
+		<from-view-id>/editeveiculo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editImp</from-outcome>
+			<to-view-id>/editeimpresso.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeimpresso</display-name>
+		<from-view-id>/editeimpresso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editImp</from-outcome>
+			<to-view-id>/editeveiculo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>arquivoedite</display-name>
+		<from-view-id>/arquivoedite.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>funcAud</from-outcome>
+			<to-view-id>/editeaudio.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeaudio</display-name>
+		<from-view-id>/editeaudio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>trocar</from-outcome>
+			<to-view-id>/arquivoedite.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>arquivoedite</display-name>
+		<from-view-id>/arquivoedite.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>funcVid</from-outcome>
+			<to-view-id>/editevideo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editevideo</display-name>
+		<from-view-id>/editevideo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>trocar</from-outcome>
+			<to-view-id>/arquivoedite.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>arquivoedite</display-name>
+		<from-view-id>/arquivoedite.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>funcImp</from-outcome>
+			<to-view-id>/editeimpresso.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeimpresso</display-name>
+		<from-view-id>/editeimpresso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>trocar</from-outcome>
+			<to-view-id>/arquivoedite.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>cliente</display-name>
+		<from-view-id>/cliente.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>arquivo</display-name>
+		<from-view-id>/arquivo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>boss</display-name>
+		<from-view-id>/boss.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>cadastrousuario</display-name>
+		<from-view-id>/cadastrousuario.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>funcionarioaudio</display-name>
+		<from-view-id>/funcionarioaudio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>funcionariovideo</display-name>
+		<from-view-id>/funcionariovideo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>funcionarioimpresso</display-name>
+		<from-view-id>/funcionarioimpresso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeaudio</display-name>
+		<from-view-id>/editeaudio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editevideo</display-name>
+		<from-view-id>/editevideo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>editeimpresso</display-name>
+		<from-view-id>/editeimpresso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>cliente</display-name>
+		<from-view-id>/cliente.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editVid</from-outcome>
+			<to-view-id>/clientevideo.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>cliente</display-name>
+		<from-view-id>/cliente.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editAud</from-outcome>
+			<to-view-id>/clienteaudio.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>cliente</display-name>
+		<from-view-id>/cliente.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>editImp</from-outcome>
+			<to-view-id>/clienteimpresso.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>clienteaudio</display-name>
+		<from-view-id>/clienteaudio.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>clientevideo</display-name>
+		<from-view-id>/clientevideo.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>clienteimpresso</display-name>
+		<from-view-id>/clienteimpresso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>boss</display-name>
+		<from-view-id>/boss.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>graf</from-outcome>
+			<to-view-id>/graficocritica.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>boss</display-name>
+		<from-view-id>/boss.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>lib</from-outcome>
+			<to-view-id>/materialiberada.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>materialiberada</display-name>
+		<from-view-id>/materialiberada.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>ret</from-outcome>
+			<to-view-id>/boss.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>materialiberada</display-name>
+		<from-view-id>/materialiberada.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>cadastrocliente</display-name>
+		<from-view-id>/cadastrocliente.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/contromidia.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<lifecycle>
+		<phase-listener>login.AuthorizationListener</phase-listener>
+	</lifecycle>
+
+</faces-config>

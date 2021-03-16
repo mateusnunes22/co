@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/09/2013 16:52:24 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entidade.Materia" table="materia" catalog="contromidia">
+        <id name="idMateria" type="java.lang.Integer">
+            <column name="idMateria" />
+            <generator class="identity" />
+        </id>
+        <property name="padrao" type="string">
+            <column name="padrao" length="250" not-null="true" />
+        </property>
+        <property name="veiculo" type="string">
+            <column name="veiculo" length="20" not-null="true" />
+        </property>
+        <property name="assunto" type="string">
+            <column name="assunto" not-null="true" />
+        </property>
+        <property name="nomeDoArquivo" type="string">
+            <column name="nomeDoArquivo" length="200" not-null="true" />
+        </property>
+        <property name="extensao" type="string">
+            <column name="extensao" length="120" not-null="true" />
+        </property>
+        <property name="data" type="date">
+            <column name="data" length="10" not-null="true" />
+        </property>
+        <property name="indice" type="string">
+            <column name="indice" length="65535" />
+        </property>
+        <property name="apresentador" type="string">
+            <column name="apresentador" length="50" />
+        </property>
+        <property name="critica" type="string">
+            <column name="critica" length="10" />
+        </property>
+        <property name="emissora" type="string">
+            <column name="emissora" length="30" />
+        </property>
+        <property name="hora" type="string">
+            <column name="hora" length="8" />
+        </property>
+        <property name="nomePrograma" type="string">
+            <column name="nomePrograma" length="45" />
+        </property>
+        <set name="usuarioHasMaterias" inverse="true">
+            <key>
+                <column name="Materia_idMateria" not-null="true" />
+            </key>
+            <one-to-many class="entidade.UsuarioHasMateria" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/09/2013 16:52:24 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entidade.Usuario" table="usuario" catalog="contromidia">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="idUsuario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="entidade.Cliente" fetch="select">
+            <column name="Cliente_idCliente" not-null="true" />
+        </many-to-one>
+        <property name="nomeUsuario" type="string">
+            <column name="nomeUsuario" length="50" not-null="true" unique="true"/>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true" />
+        </property>
+        <property name="senha" type="string">
+            <column name="senha" length="60" not-null="true" />
+        </property>
+        <property name="perfil" type="string">
+            <column name="perfil" length="10" not-null="true" />
+        </property>
+        <set name="usuarioHasMaterias" inverse="true">
+            <key>
+                <column name="Usuario_idUsuario" not-null="true" />
+            </key>
+            <one-to-many class="entidade.UsuarioHasMateria" />
+        </set>
+    </class>
+</hibernate-mapping>
